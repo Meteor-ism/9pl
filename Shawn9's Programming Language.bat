@@ -8,9 +8,9 @@ echo TYPE HELP FOR COMMANDS
 set /p "in=>"
 if "%in%"=="help" goto help
 if "%in%"=="lc" goto lc
-if not exist ..\​folder.registrate if exist ASSETS\folder\%in%.9pl goto d
+if not exist ..\folder.registrate (if exist "ASSETS\folder\%in%.9pl" (goto d))
 if exist "ASSETS\%in%.9pl" goto b
-if exist ..\​folder.registrate if exist ASSETS\folder\%in%.9pl goto c
+if exist "ASSETS\folder\%in%.9pl" goto c
 echo %in% isn't a valid command
 goto a
 :help
