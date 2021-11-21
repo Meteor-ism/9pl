@@ -8,6 +8,7 @@ call "..\Shawn9's Programming Language.bat"
 if exist ..\..\folder.registrate goto end
 md ..\ASSETS\folder
 echo >> ..\..\folder.registrate
+echo >> ..\ASSETS\folder\null
 goto end
 :1
 copy ..\ASSETS\folder\*.* ..\ASSETS
