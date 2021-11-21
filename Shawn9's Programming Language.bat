@@ -20,7 +20,7 @@ echo LOCAL COMMANDS
 echo help
 echo lc
 echo -clear
-if exist ..\folder.registrate if exist \ASSETS\folder\null echo -unregister folder
+if exist ..\folder.registrate if exist ASSETS\folder\null echo -unregister folder
 echo -exit
 goto a
 :lc
