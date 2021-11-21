@@ -20,14 +20,14 @@ echo LOCAL COMMANDS
 echo help
 echo lc
 echo -clear
-if exist ..\folder.registrate if exist ASSETS\folder\null echo -unregister folder
+if exist ..\folder.registrate if exist "ASSETS\folder\null" echo -unregister folder
 echo -exit
 goto a
 :lc
 set /p "lc=>"
 if "%lc%"=="clear" goto lcclear
 if "%lc%"=="exit" goto lcexit
-if exist ..\​folder.registrate if exist ASSETS\folder\null if "%lc%"=="unregister folder" goto lcuf
+if exist ..\folder.registrate if exist ASSETS\folder\null if "%lc%"=="unregister folder" goto lcuf
 goto d
 :lcclear
 cls
