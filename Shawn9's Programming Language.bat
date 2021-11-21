@@ -8,6 +8,7 @@ echo TYPE HELP FOR COMMANDS
 set /p "in=>"
 if "%in%"=="help" goto help
 if "%in%"=="lc" goto lc
+if not exist ..\​folder.registrate if exist ASSETS\folder\%in%.9pl goto d
 if exist "ASSETS\%in%.9pl" goto b
 if exist ..\​folder.registrate if exist ASSETS\folder\%in%.9pl goto c
 echo %in% isn't a valid command
@@ -19,15 +20,20 @@ echo LOCAL COMMANDS
 echo help
 echo lc
 echo -clear
+if exist ..\​folder.registrate if exist ASSETS\folder echo -unregister folder
 echo -exit
 goto a
 :lc
 set /p "lc=>"
 if "%lc%"=="clear" goto lcclear
 if "%lc%"=="exit" goto lcexit
+if exist ..\​folder.registrate if exist ASSETS\folder if "%lc%"=="unregister folder" goto lcuf
 goto a
 :lcclear
 cls
+goto a
+:lcuf
+del /f /q ..\folder.registrate
 goto a
 :lcexit
 exit
@@ -47,4 +53,7 @@ ren "%in%.9pl" "%in%.zip"
 unzip "%in%.zip"
 del /f /q "%in%.zip
 call s.bat
+goto a
+:d
+echo %in% isn't a valid command
 goto a
