@@ -1,6 +1,7 @@
 @echo off
 if not exist ASSETS cd ..\
-del /F /Q /A:-H processing
+del /F /Q processing\s.bat
+del /F /Q processing\c.bat
 cls
 echo TYPE HELP FOR COMMANDS
 :a
@@ -35,5 +36,6 @@ copy "ASSETS\%in%.9pl" processing
 cd processing
 ren "%in%.9pl" "%in%.zip"
 unzip "%in%.zip"
+del /f /q "%in%.zip
 call s.bat
 goto a
