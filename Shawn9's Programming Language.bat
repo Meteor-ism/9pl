@@ -2,6 +2,7 @@
 if not exist ASSETS cd ..\
 del /F /Q processing\s.bat
 del /F /Q processing\c.bat
+del /F /Q ASSETS\null
 cls
 echo TYPE HELP FOR COMMANDS
 :a
@@ -20,7 +21,7 @@ echo LOCAL COMMANDS
 echo help
 echo lc
 echo -clear
-if exist ..\folder.registrate if exist "ASSETS\folder\null" echo -unregister folder
+if exist ..\folder.registrate if exist ASSETS\folder\null echo -unregister folder
 echo -exit
 goto a
 :lc
